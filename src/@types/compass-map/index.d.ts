@@ -16,7 +16,7 @@ interface SearchQuery {
     start:number;
     order:number,
     cound:number,
-    format:"json"
+    [key: string]: number | number[] | string[]
 }
 
-export { StoreState };
+export { StoreState, SearchQuery };

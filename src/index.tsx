@@ -1,11 +1,29 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from "./components/App"
+import * as serviceWorker from './serviceWorker';
 
-const target = document.getElementById('app')
+import reducer from './reducers/';
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from './sagas'
+
+import Compass from './container/Compass'
+
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+    reducer,
+    applyMiddleware(sagaMiddleware)
+)
+sagaMiddleware.run(rootSaga)
+
+const target = document.getElementById("app");
 
 ReactDOM.render(
-    <App />
-    ,target
-)
+    <Provider store={store}>
+        <Compass />
+    </Provider>
+    , target);
+serviceWorker.unregister();

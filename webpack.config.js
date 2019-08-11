@@ -11,21 +11,23 @@ module.exports = {
     },
 
     devServer: {
-        port:"3030",
-        hot:true,
-        open:true
+        port: "3030",
+        hot: true,
+        open: true
     },
 
+
+    devtool: 'source-map',
+
     module: {
-        rules:[
-            {
+        rules: [{
                 test: /\.js(x?)$/,
-                loader:'babel-loader',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
             },
             {
                 test: /\.ts(x?)$/,
-                loader:'ts-loader',
+                loader: 'ts-loader',
                 exclude: /node_modules/,
             }
         ]
@@ -38,7 +40,7 @@ module.exports = {
     ],
 
     resolve: {
-        extensions: ['.js','.ts','.tsx']
+        extensions: ['.js', '.ts', '.tsx']
     }
 
 }

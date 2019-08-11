@@ -1,0 +1,3 @@
+export const CHANGE_PREFECTURE = "CHANGE_PREFECTURE";
+export const POST_SUCCEED = "POST_SUCCEED";
+export const POST_FAILD = "POST_FAILD";

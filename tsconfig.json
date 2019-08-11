@@ -6,15 +6,25 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
+        "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
         "allowJs": true,
         "esModuleInterop": true,
-        "jsx":"react"
+        "jsx": "react",
+        "baseUrl": "src",
+        "typeRoots": ["@types", "node_modules/@types"],
+        "paths": {
+            "compass-map": ["@types/compass-map"]
+        }
     },
     "exclude": [
         "node_modules",
         "webpack.config.js",
         "dist"
+    ],
+    "include": [
+        "src",
+        "**/*.ts"
     ]
 }
